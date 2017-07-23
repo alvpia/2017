@@ -268,8 +268,10 @@
         scene.add(font_clear);
         init = true;
                     
+          if(clickcount>0){
           alert(clickcount + "回クリックしました");
           clickcount=0;
+                          }
       }
       if(mousedown){
         scene.remove(font_clear);
@@ -282,9 +284,10 @@
       if(!init){
         scene.add(font_gover);
         init = true;
+          if(clickcount>0){
           alert(clickcount + "回クリックしました");
           clickcount=0;
-      }
+                          }
       if(mousedown){
         scene.remove(font_gover);
         state = STATE.READY;
