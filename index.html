@@ -267,13 +267,14 @@
       if(!init){
         scene.add(font_clear);
         init = true;
+                    
+          alert(clickcount + "回クリックしました");
+          clickcount=0;
       }
       if(mousedown){
         scene.remove(font_clear);
         state = STATE.READY;
-          
-          alert(clickcount + "回クリックしました");
-          clickcount=0;
+
       }
       break;
     case STATE.GAMEOVER:
