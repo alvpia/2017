@@ -22,7 +22,7 @@
   var stage_mesh = new Array();
   var mousedown = false;
   var mousePosition;
-  
+  var clickcount=0;
   var STATE = {
     INIT: 0,
     READY: 1,
@@ -234,6 +234,7 @@
       }
       if(on_surface){
         if(mousedown){
+            clickcount++;
           if(mousePosition.x < 0.3){
             vel.x -= 0.00001 * elapsedTime;
           }else if(0.7 < mousePosition.x){
@@ -270,6 +271,9 @@
       if(mousedown){
         scene.remove(font_clear);
         state = STATE.READY;
+          
+          alert(clickcount + "回クリックしました");
+          clickcount=0;
       }
       break;
     case STATE.GAMEOVER:
@@ -277,6 +281,8 @@
       if(!init){
         scene.add(font_gover);
         init = true;
+          alert(clickcount + "回クリックしました");
+          clickcount=0;
       }
       if(mousedown){
         scene.remove(font_gover);
